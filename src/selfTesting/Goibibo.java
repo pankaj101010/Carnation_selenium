@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Goibibo {
 
-	public static void close(WebDriver d) {
+	public static void closePopUp(WebDriver d) {
 		//d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		d.switchTo().frame("notification-frame-22a342a1b");
 		d.findElement(By.xpath("//a[@id='webklipper-publisher-widget-container-notification-close-div']//i")).click();
@@ -54,25 +54,32 @@ public class Goibibo {
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver d = new ChromeDriver();
 		d.get("https://www.goibibo.com/");
-		d.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		d.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		//d.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-		Thread.sleep(10000);
-		close(d);
-		WebElement s = d.findElement(By.xpath("//input[@id='gosuggest_inputSrc']"));
-		s.sendKeys("pune");
-		Thread.sleep(1000);
-		s.sendKeys(Keys.ARROW_DOWN);
-		s.sendKeys(Keys.ENTER);
-		WebElement dp = d.findElement(By.xpath("//input[@id='gosuggest_inputDest']"));
-		dp.sendKeys("nag");
-		Thread.sleep(1000);
-		dp.sendKeys(Keys.ARROW_DOWN);
-		dp.sendKeys(Keys.ENTER);
-		for (int i = 0; i < 4; i++) {
-			d.findElement(By.xpath("//span[@class='DayPicker-NavButton DayPicker-NavButton--next']")).click();
-			Thread.sleep(1000);
+		//Thread.sleep(10000);
+		try {
+			closePopUp(d);			
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
 		}
-		switchTocal(d);
+		finally{
+			
+			WebElement s = d.findElement(By.xpath("//input[@id='gosuggest_inputSrc']"));
+			s.sendKeys("pune");
+			Thread.sleep(1000);
+			s.sendKeys(Keys.ARROW_DOWN);
+			s.sendKeys(Keys.ENTER);
+			WebElement dp = d.findElement(By.xpath("//input[@id='gosuggest_inputDest']"));
+			dp.sendKeys("nag");
+			Thread.sleep(2000);
+			dp.sendKeys(Keys.ARROW_DOWN);
+			dp.sendKeys(Keys.ENTER);
+			for (int i = 0; i < 4; i++) {
+				d.findElement(By.xpath("//span[@class='DayPicker-NavButton DayPicker-NavButton--next']")).click();
+				Thread.sleep(1000);
+			}
+			switchTocal(d);
+		}
 
 	}
 }
