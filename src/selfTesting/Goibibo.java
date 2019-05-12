@@ -73,50 +73,6 @@ public class Goibibo {
 			Thread.sleep(1000);
 		}
 		switchTocal(d);
-//		int maxamount = 0;
-//		List<WebElement> week = d.findElements(By.xpath("//div[@class='DayPicker-Body']/div"));
-//		for (int i = 1; i <= week.size(); i++) {
-//			List<WebElement> weeekdays = d.findElements(
-//					By.xpath("//div[@class='DayPicker-Body']/div[" + i + "]/div[@aria-disabled='false']"));
-//			int count = weeekdays.size();
-//			for (int j = 1; j <= count; j++) {
-//				String amount = d.findElement(By.xpath("//div[@class='DayPicker-Body']/div[" + i
-//						+ "]/div[@aria-disabled='false'][" + j + "]/descendant::*[5]")).getText();
-//				int p = Integer.parseInt(amount);
-//				if (p > maxamount) {
-//					maxamount = p;
-//				}
-//			}
-//		}
-//		for (int i = 1; i <= week.size(); i++) {
-//			String a = Integer.toString(maxamount);
-//			List<WebElement> weekdays = d.findElements(
-//					By.xpath("//div[@class='DayPicker-Body']/div[" + i + "]/div[@aria-disabled='false']"));
-//			int count = weekdays.size();
-//			for (int j = 1; j <= count; j++) {
-//				String b = d.findElement(By.xpath("//div[@class='DayPicker-Body']/div[" + i
-//						+ "]/div[@aria-disabled='false'][" + j + "]/descendant::*[5]")).getText();
-//				if (a.equals(b)) {
-//					d.findElement(By.xpath("//div[@class='DayPicker-Body']/div[" + i + "]/div[@aria-disabled='false']["
-//							+ j + "]/descendant::*[5]")).click();
-//					break;
-//				}
-//			}
-//		}
-//		
-		
-		
-//		d.findElement(By.xpath("//i[@class='icon-bus db blue ico24 lh1-2 padT5 padB5']")).click();		
-//		WebElement p=d.findElement(By.xpath("//input[@id='gi_source']"));
-//		WebElement q=d.findElement(By.xpath("//input[@id='gi_destination']"));
-//		p.sendKeys("pune");
-//		Thread.sleep(1000);
-//		p.sendKeys(Keys.ARROW_DOWN);
-//		p.sendKeys(Keys.ENTER);
-//		q.sendKeys("amra");
-//		Thread.sleep(1000);
-//		q.sendKeys(Keys.ARROW_DOWN);
-//		q.sendKeys(Keys.ENTER);
-//        
+
 	}
 }
