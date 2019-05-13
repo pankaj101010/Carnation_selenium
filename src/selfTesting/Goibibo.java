@@ -54,7 +54,7 @@ public class Goibibo {
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver d = new ChromeDriver();
 		d.get("https://www.goibibo.com/");
-		d.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		//d.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		//d.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		//Thread.sleep(10000);
 		try {
@@ -66,7 +66,7 @@ public class Goibibo {
 			
 			WebElement s = d.findElement(By.xpath("//input[@id='gosuggest_inputSrc']"));
 			s.sendKeys("pune");
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			s.sendKeys(Keys.ARROW_DOWN);
 			s.sendKeys(Keys.ENTER);
 			WebElement dp = d.findElement(By.xpath("//input[@id='gosuggest_inputDest']"));
@@ -79,6 +79,13 @@ public class Goibibo {
 				Thread.sleep(1000);
 			}
 			switchTocal(d);
+			d.findElement(By.xpath("//div[@id='pax_link_common']")).click();
+			Thread.sleep(2000);
+			for (int i = 0; i < 3; i++) {
+				d.findElement(By.xpath("//button[@id='adultPaxPlus']")).click();
+				d.findElement(By.xpath("//button[@id='childPaxPlus']")).click();
+			}
+			d.findElement(By.xpath("//button[@id='gi_search_btn']")).click();
 		}
 
 	}
