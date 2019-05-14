@@ -22,11 +22,11 @@ public class GetWindowhandle {
 		driver.findElement(By.xpath("//li[@class='ebooks']//a//img")).click();
 		//driver.findElement(By.name("q")).sendKeys("kindle online reader");
 		//driver.findElement(By.xpath("//input[@value='Google Search']")).click();
-       	Set <String> child = driver.getWindowHandles(); 
-       	System.out.println(child);
-       	 int count = child.size();
+       	Set <String> alltabs = driver.getWindowHandles(); 
+       	System.out.println(alltabs);
+       	 int count = alltabs.size();
        	 System.out.println(count);
-       	 for (String string : child) {
+       	 for (String string : alltabs) {
 			if (!parent.equalsIgnoreCase(string)) {
 				driver.switchTo().window(string);
 				driver.getTitle();

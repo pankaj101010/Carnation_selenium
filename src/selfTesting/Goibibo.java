@@ -12,12 +12,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Goibibo {
 
 	public static void closePopUp(WebDriver d) {
-		//d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		// d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		d.switchTo().frame("notification-frame-22a342a1b");
 		d.findElement(By.xpath("//a[@id='webklipper-publisher-widget-container-notification-close-div']//i")).click();
 		d.switchTo().defaultContent();
 	}
-	public static void  switchTocal(WebDriver d) {
+
+	public static void switchTocal(WebDriver d) {
 		int maxamount = 1000000;
 		List<WebElement> week = d.findElements(By.xpath("//div[@class='DayPicker-Body']/div"));
 		for (int i = 1; i <= week.size(); i++) {
@@ -48,22 +49,18 @@ public class Goibibo {
 				}
 			}
 		}
-		
+
 	}
 
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver d = new ChromeDriver();
-		d.get("https://www.goibibo.com/");
-		//d.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		//d.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-		//Thread.sleep(10000);
+		d.get("https://www.goibibo.com/");	
 		try {
-			closePopUp(d);			
-		}catch(Exception e) {
+			closePopUp(d);
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-		finally{
-			
+		} finally {
+
 			WebElement s = d.findElement(By.xpath("//input[@id='gosuggest_inputSrc']"));
 			s.sendKeys("pune");
 			Thread.sleep(2000);
