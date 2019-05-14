@@ -60,20 +60,4 @@ public class CookiesHandling {
 	public void deletcookies(WebDriver driver) {
 		driver.manage().deleteAllCookies();
 	}
-
-//	public static void main(String[] args) {
-//		driver = new ChromeDriver();
-//		driver.get("https://www.google.in");
-//		for (Object string : getCookies(driver)) {
-//			System.out.println(string);
-//		}
-//
-//		System.out.println("size of cookies is : " + cookieSize(driver));
-//		cookieName(driver);
-//		addCookie(driver, "pankaj", "11234");
-//		System.out.println(getCookieName(driver));
-//		System.out.println("size of cookies is : " + cookieSize(driver));
-
-	//}
-
 }
