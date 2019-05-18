@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CookiesHandling {
-	WebDriver driver;
+	//WebDriver driver;
 
 	/***
 	 * This method is used to get all cookies in the form of array .
